@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Community Jordan - بطولة وتجمع Generals Zero Hour | LAN Party رسمي في الأردن" />
+  <meta name="keywords" content="Generals Zero Hour, Community Jordan, بطولة, LAN, الأردن, Command and Conquer" />
+  <title>Community Jordan | Generals Zero Hour Championship</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <h2>COMMUNITY JORDAN</h2>
+      <p>Generals Zero Hour</p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-icon">⚔️</span>
+        <span class="logo-text">Community <span>Jordan</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#about">عن الحدث</a></li>
+        <li><a href="#tournament">البطولة</a></li>
+        <li><a href="#rules">القوانين</a></li>
+        <li><a href="#register" class="btn-nav">سجّل الآن</a></li>
+        <li><a href="#faq">الأسئلة</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="القائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">LAN PARTY • TOURNAMENT 2026</div>
+      <h1 class="hero-title">
+        <span class="line1">COMMUNITY JORDAN</span>
+        <span class="line2">GENERALS ZERO HOUR</span>
+      </h1>
+      <p class="hero-subtitle">
+        أكبر تجمع ولان بارتي للعبة Generals Zero Hour في الأردن
+        <br />
+        فرق من 3 لاعبين • أجهزة جاهزة • أجواء أسطورية
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-count="3">0</span>
+          <span class="stat-label">لاعبين لكل فريق</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">5</span>
+          <span class="stat-label">دينار أردني / شخص</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="∞">∞</span>
+          <span class="stat-label">العدد مفتوح</span>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#register" class="btn btn-primary">
+          <i class="fab fa-whatsapp"></i>
+          سجّل فريقك الآن
+        </a>
+        <a href="#tournament" class="btn btn-outline">تفاصيل البطولة</a>
+      </div>
+      <div class="countdown" id="countdown">
+        <div class="count-box"><span id="days">00</span><small>يوم</small></div>
+        <div class="count-box"><span id="hours">00</span><small>ساعة</small></div>
+        <div class="count-box"><span id="minutes">00</span><small>دقيقة</small></div>
+        <div class="count-box"><span id="seconds">00</span><small>ثانية</small></div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>اسحب للأسفل</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">عن الحدث</span>
+        <h2>تجمع أسطوري للاعبي Zero Hour</h2>
+        <p>مكان يجمع أفضل اللاعبين في الأردن لخوض معارك استراتيجية لا تُنسى</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="card-icon"><i class="fas fa-gamepad"></i></div>
+          <h3>أجهزة جاهزة</h3>
+          <p>نوفر أجهزة كمبيوتر مجهزة بالكامل باللعبة والإعدادات المثالية. فقط أحضر مهاراتك!</p>
+        </div>
+        <div class="about-card">
+          <div class="card-icon"><i class="fas fa-users"></i></div>
+          <h3>فرق من 3 لاعبين</h3>
+          <p>نظام التسجيل بالفرق (3v3). اجمع أقوى فريق وكن جزءاً من الأسطورة.</p>
+        </div>
+        <div class="about-card">
+          <div class="card-icon"><i class="fas fa-trophy"></i></div>
+          <h3>بطولة رسمية</h3>
+          <p>نظام إقصاء مزدوج، حكام محترفين، جوائز للفرق الفائزة وأجواء تنافسية عالية.</p>
+        </div>
+        <div class="about-card">
+          <div class="card-icon"><i class="fas fa-wifi"></i></div>
+          <h3>LAN Party حقيقي</h3>
+          <p>شبكة محلية سريعة، بيئة مريحة، أكل وشرب، وفرصة للتعرف على مجتمع اللعبة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tournament Section -->
+  <section id="tournament" class="section tournament">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">البطولة</span>
+        <h2>تفاصيل البطولة والجوائز</h2>
+      </div>
+      <div class="tournament-content">
+        <div class="tournament-info">
+          <div class="info-item">
+            <i class="fas fa-calendar-alt"></i>
+            <div>
+              <h4>التاريخ</h4>
+              <p>الجمعة 20 نوفمبر 2026 • من الساعة 4:00 مساءً</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>الموقع</h4>
+              <p>عمان، الأردن • سيتم الإعلان عن العنوان الدقيق بعد التسجيل</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-users"></i>
+            <div>
+              <h4>صيغة اللعب</h4>
+              <p>3 مقابل 3 • نظام إقصاء مزدوج (Double Elimination)</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-money-bill-wave"></i>
+            <div>
+              <h4>سعر التذكرة</h4>
+              <p>5 دنانير أردنية للشخص الواحد (15 دينار للفريق)</p>
+            </div>
+          </div>
+        </div>
+        <div class="prizes">
+          <h3><i class="fas fa-medal"></i> الجوائز</h3>
+          <div class="prize-list">
+            <div class="prize gold">
+              <span class="place">المركز الأول</span>
+              <span class="reward">كأس البطولة + جوائز نقدية وعينية</span>
+            </div>
+            <div class="prize silver">
+              <span class="place">المركز الثاني</span>
+              <span class="reward">ميداليات + جوائز عينية</span>
+            </div>
+            <div class="prize bronze">
+              <span class="place">المركز الثالث</span>
+              <span class="reward">ميداليات تذكارية</span>
+            </div>
+          </div>
+          <p class="prize-note">* الجوائز النهائية تعتمد على عدد الفرق المشاركة وسيتم الإعلان عنها قبل البطولة</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rules Section -->
+  <section id="rules" class="section rules">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">القوانين</span>
+        <h2>قوانين البطولة الأساسية</h2>
+      </div>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <span class="rule-num">01</span>
+          <h4>تكوين الفريق</h4>
+          <p>كل فريق يتكون من 3 لاعبين أساسيين. يمكن إضافة لاعب احتياطي واحد فقط.</p>
+        </div>
+        <div class="rule-card">
+          <span class="rule-num">02</span>
+          <h4>اللعبة والإصدار</h4>
+          <p>Command & Conquer Generals – Zero Hour (الإصدار الرسمي مع آخر التحديثات المعتمدة).</p>
+        </div>
+        <div class="rule-card">
+          <span class="rule-num">03</span>
+          <h4>الخرائط</h4>
+          <p>مجموعة خرائط معتمدة سيتم الإعلان عنها قبل البطولة. يمنع استخدام خرائط غير رسمية.</p>
+        </div>
+        <div class="rule-card">
+          <span class="rule-num">04</span>
+          <h4>السلوك</h4>
+          <p>يمنع الغش بأي شكل، الإهانات، أو أي سلوك غير رياضي. المخالفة = استبعاد فوري.</p>
+        </div>
+        <div class="rule-card">
+          <span class="rule-num">05</span>
+          <h4>التأخير</h4>
+          <p>أي تأخير أكثر من 10 دقائق عن موعد المباراة قد يؤدي إلى خسارة تلقائية.</p>
+        </div>
+        <div class="rule-card">
+          <span class="rule-num">06</span>
+          <h4>الحكام</h4>
+          <p>قرارات الحكام نهائية. يُسمح بالاعتراض مرة واحدة فقط لكل مباراة وبشكل رسمي.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Register Section -->
+  <section id="register" class="section register">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">التسجيل</span>
+        <h2>سجّل فريقك الآن</h2>
+        <p>التسجيل يتم عبر واتساب على الرقم الموحد. العدد مفتوح!</p>
+      </div>
+      <div class="register-box">
+        <div class="register-info">
+          <div class="price-tag">
+            <span class="amount">5</span>
+            <span class="currency">دينار أردني</span>
+            <span class="per">للشخص الواحد</span>
+          </div>
+          <ul class="register-benefits">
+            <li><i class="fas fa-check"></i> دخول كامل للبطولة واللان</li>
+            <li><i class="fas fa-check"></i> أجهزة جاهزة للعب</li>
+            <li><i class="fas fa-check"></i> فرصة للفوز بالجوائز</li>
+            <li><i class="fas fa-check"></i> أجواء مجتمع وذكريات لا تُنسى</li>
+          </ul>
+        </div>
+        <div class="register-form-side">
+          <h3>طريقة التسجيل</h3>
+          <ol class="steps">
+            <li>اضغط على زر واتساب بالأسفل</li>
+            <li>سيفتح محادثة جاهزة مع الرسالة المطلوبة</li>
+            <li>أضف أسماء اللاعبين الثلاثة + اسم الفريق</li>
+            <li>أرسل الرسالة وانتظر التأكيد</li>
+          </ol>
+          <a href="https://wa.me/966795354968?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%0A%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AA%D8%B3%D8%AC%D9%8A%D9%84%20%D9%81%D9%8A%20%D8%A8%D8%B7%D9%88%D9%84%D8%A9%20Community%20Jordan%20-%20Generals%20Zero%20Hour%0A%0A%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%81%D8%B1%D9%8A%D9%82%3A%20%0A%D8%A7%D9%84%D9%84%D8%A7%D8%B9%D8%A8%201%3A%20%0A%D8%A7%D9%84%D9%84%D8%A7%D8%B9%D8%A8%202%3A%20%0A%D8%A7%D9%84%D9%84%D8%A7%D8%B9%D8%A8%203%3A%20%0A%D8%B1%D9%82%D9%85%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%3A%20" 
+             class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            سجّل عبر واتساب الآن
+          </a>
+          <p class="whatsapp-number">
+            <i class="fas fa-phone"></i>
+            الرقم الموحد: <strong dir="ltr">+966 795 354 968</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="section faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">الأسئلة الشائعة</span>
+        <h2>كل اللي تحتاجه تعرفه</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>هل لازم أجيب جهازي الخاص؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>لا، الأجهزة متوفرة وجاهزة للعب. فقط تعال بمهاراتك وروح التنافس!</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>هل يمكن التسجيل كفرد بدون فريق؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>يفضل التسجيل كفريق مكتمل (3 لاعبين). إذا ما عندك فريق، تواصل معنا عبر واتساب ونساعدك تلاقي زملاء.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>متى يتم دفع التذكرة؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>بعد تأكيد التسجيل عبر واتساب، سيتم إعطاؤك تفاصيل الدفع (تحويل بنكي أو نقداً يوم الحدث).</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>هل فيه عمر محدد للمشاركة؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>الحد الأدنى 16 سنة. من هم دون 18 سنة يفضل وجود موافقة ولي الأمر.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>هل يمكن إلغاء التسجيل؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>نعم، بشرط الإبلاغ قبل 48 ساعة من موعد الحدث. التفاصيل تُحدد عند التسجيل.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-icon">⚔️</span>
+            <span class="logo-text">Community <span>Jordan</span></span>
+          </div>
+          <p>مجتمع لاعبي Generals Zero Hour في الأردن. نجمعكم لنصنع ذكريات أسطورية.</p>
+        </div>
+        <div class="footer-links">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#tournament">البطولة</a></li>
+            <li><a href="#register">التسجيل</a></li>
+            <li><a href="#faq">الأسئلة</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>تواصل معنا</h4>
+          <a href="https://wa.me/966795354968" class="footer-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            واتساب: +966 795 354 968
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Community Jordan. جميع الحقوق محفوظة.</p>
+        <p class="made-with">صُنع بحب للاعبين ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="back-to-top" aria-label="العودة للأعلى">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
