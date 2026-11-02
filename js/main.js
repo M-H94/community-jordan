@@ -1,105 +1,69 @@
-// ===== Loader =====
+// ===== LOADER =====
 window.addEventListener('load', () => {
-  const loader = document.getElementById('loader');
   setTimeout(() => {
-    loader.classList.add('hidden');
-  }, 1200);
+    document.getElementById('loader').classList.add('hide');
+  }, 1600);
 });
 
-// ===== Navbar Scroll =====
+// ===== NAVBAR =====
 const navbar = document.getElementById('navbar');
-const backToTop = document.getElementById('backToTop');
+const backTop = document.getElementById('backTop');
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-
-  if (window.scrollY > 400) {
-    backToTop.classList.add('visible');
-  } else {
-    backToTop.classList.remove('visible');
-  }
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  backTop.classList.toggle('show', window.scrollY > 500);
 });
 
-// ===== Mobile Menu =====
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  menuToggle.classList.toggle('active');
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('open');
 });
 
-// Close menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    menuToggle.classList.remove('active');
-  });
+document.querySelectorAll('.nav-menu a').forEach(link => {
+  link.addEventListener('click', () => navMenu.classList.remove('open'));
 });
 
-// ===== Countdown Timer =====
-// Event date: 20 November 2026, 16:00 (Jordan time approx UTC+3)
+// ===== COUNTDOWN =====
 const eventDate = new Date('2026-11-20T16:00:00+03:00').getTime();
 
 function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = eventDate - now;
+  const now = Date.now();
+  const dist = eventDate - now;
 
-  if (distance < 0) {
-    document.getElementById('days').textContent = '00';
-    document.getElementById('hours').textContent = '00';
-    document.getElementById('minutes').textContent = '00';
-    document.getElementById('seconds').textContent = '00';
+  if (dist < 0) {
+    ['days','hours','minutes','seconds'].forEach(id => {
+      document.getElementById(id).textContent = '00';
+    });
     return;
   }
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById('days').textContent = String(days).padStart(2, '0');
-  document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-  document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-  document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+  document.getElementById('days').textContent = String(Math.floor(dist / 86400000)).padStart(2, '0');
+  document.getElementById('hours').textContent = String(Math.floor((dist % 86400000) / 3600000)).padStart(2, '0');
+  document.getElementById('minutes').textContent = String(Math.floor((dist % 3600000) / 60000)).padStart(2, '0');
+  document.getElementById('seconds').textContent = String(Math.floor((dist % 60000) / 1000)).padStart(2, '0');
 }
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// ===== FAQ Accordion =====
-document.querySelectorAll('.faq-question').forEach(button => {
-  button.addEventListener('click', () => {
-    const item = button.parentElement;
-    const isActive = item.classList.contains('active');
-
-    // Close all
-    document.querySelectorAll('.faq-item').forEach(faq => {
-      faq.classList.remove('active');
-    });
-
-    // Open clicked if it wasn't active
-    if (!isActive) {
-      item.classList.add('active');
-    }
+// ===== FAQ =====
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const wasActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+    if (!wasActive) item.classList.add('active');
   });
 });
 
-// ===== Back to Top =====
-backToTop.addEventListener('click', () => {
+// ===== BACK TO TOP =====
+backTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// ===== Smooth reveal on scroll (simple) =====
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
+// ===== SCROLL REVEAL =====
+const revealEls = document.querySelectorAll('.feature-card, .detail-row, .rule-box, .prize-card');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -107,43 +71,11 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.style.transform = 'translateY(0)';
     }
   });
-}, observerOptions);
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.about-card, .rule-card, .info-item, .prize').forEach(el => {
+revealEls.forEach(el => {
   el.style.opacity = '0';
-  el.style.transform = 'translateY(25px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1)';
   observer.observe(el);
 });
-
-// ===== Simple particle effect for hero =====
-const particlesContainer = document.getElementById('particles');
-if (particlesContainer) {
-  for (let i = 0; i < 30; i++) {
-    const particle = document.createElement('div');
-    particle.style.cssText = `
-      position: absolute;
-      width: ${Math.random() * 3 + 1}px;
-      height: ${Math.random() * 3 + 1}px;
-      background: rgba(201, 162, 39, ${Math.random() * 0.4 + 0.1});
-      border-radius: 50%;
-      top: ${Math.random() * 100}%;
-      left: ${Math.random() * 100}%;
-      animation: float ${Math.random() * 10 + 8}s linear infinite;
-      opacity: ${Math.random() * 0.6 + 0.2};
-    `;
-    particlesContainer.appendChild(particle);
-  }
-}
-
-// Add float keyframes dynamically
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes float {
-    0% { transform: translateY(0) translateX(0); opacity: 0; }
-    10% { opacity: 0.6; }
-    90% { opacity: 0.6; }
-    100% { transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px); opacity: 0; }
-  }
-`;
-document.head.appendChild(style);
