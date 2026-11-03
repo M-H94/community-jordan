@@ -15,7 +15,7 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 });
 
 // Countdown
-const eventDate = new Date('2026-11-20T16:00:00+03:00').getTime();
+const eventDate = new Date('2026-11-7T16:00:00+03:00').getTime();
 function updateCountdown() {
   const dist = eventDate - Date.now();
   if (dist < 0) {
